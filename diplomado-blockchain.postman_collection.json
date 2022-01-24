@@ -1,0 +1,940 @@
+{
+	"info": {
+		"_postman_id": "8ad13f56-6901-4cfd-9a7d-1a20c5aada67",
+		"name": "diplomado-blockchain",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "class-03",
+			"item": [
+				{
+					"name": "smartcontract",
+					"item": [
+						{
+							"name": "Invoke",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"org\":\"MainOrg\",\r\n\t\"channel\":\"main-channel\",\r\n\t\"chaincode\":\"smart_licenses\",\r\n\t\"function\":\"addLicensesToLicenser\",\r\n\t\"args\":[{\r\n        \"id\": \"4\",\r\n        \r\n        \"licenses\": [\r\n            {\r\n                \"id\": \"License #1\",\r\n                \"name\": \"License Test\"\r\n                \r\n            }\r\n        ]\r\n    }]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_client}}/smartcontract/invoke",
+									"host": [
+										"{{url_client}}"
+									],
+									"path": [
+										"smartcontract",
+										"invoke"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Node: initLedger",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"org\":\"MainOrg\",\r\n\t\"channel\":\"main-channel\",\r\n\t\"chaincode\":\"test_node\",\r\n\t\"function\":\"initLedger\",\r\n\t\"args\":[]\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url_client}}/smartcontract/invoke",
+											"host": [
+												"{{url_client}}"
+											],
+											"path": [
+												"smartcontract",
+												"invoke"
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								},
+								{
+									"name": "Node: create licenser",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"org\":\"MainOrg\",\r\n\t\"channel\":\"main-channel\",\r\n\t\"chaincode\":\"smart_licenses\",\r\n\t\"function\":\"createLicenser\",\r\n\t\"args\":[{\r\n        \"id\": \"2\",\r\n        \"name\": \"Test\"\r\n    }]\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url_client}}/smartcontract/invoke",
+											"host": [
+												"{{url_client}}"
+											],
+											"path": [
+												"smartcontract",
+												"invoke"
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								},
+								{
+									"name": "Node: create costumer",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"org\":\"MainOrg\",\r\n  \"channel\":\"main-channel\",\r\n  \"chaincode\":\"test_node\",\r\n  \"function\":\"createCustomer\",\r\n  \"args\":[{\r\n      \"rut\": \"1-8\",\r\n      \"firstName\": \"Jonathan\",\r\n      \"lastName\": \"Hechen\",\r\n      \"amount\": \"1000\",\r\n      \"account\": \"BASIC\",\r\n      \"status\": \"ACTIVE\"\r\n  }]\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url_client}}/smartcontract/invoke",
+											"host": [
+												"{{url_client}}"
+											],
+											"path": [
+												"smartcontract",
+												"invoke"
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								},
+								{
+									"name": "Node: add licenses to licenser",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"org\":\"MainOrg\",\r\n\t\"channel\":\"main-channel\",\r\n\t\"chaincode\":\"smart_licenses\",\r\n\t\"function\":\"addLicensesToLicenser\",\r\n\t\"args\":[{\r\n        \"id\": \"3\",\r\n        \"name\": \"Test\",\r\n        \"licenses\": [\r\n            {\r\n                \"id\": \"License #1\",\r\n                \"name\": \"License Test\"\r\n                \r\n            }\r\n        ]\r\n    }]\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url_client}}/smartcontract/invoke",
+											"host": [
+												"{{url_client}}"
+											],
+											"path": [
+												"smartcontract",
+												"invoke"
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								}
+							]
+						},
+						{
+							"name": "Query",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"org\":\"MainOrg\",\r\n\t\"channel\":\"main-channel\",\r\n\t\"chaincode\":\"smart_licenses\",\r\n\t\"function\":\"queryAllLicensers\",\r\n\t\"args\":[]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_client}}/smartcontract/query",
+									"host": [
+										"{{url_client}}"
+									],
+									"path": [
+										"smartcontract",
+										"query"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Node: ping",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"org\":\"MainOrg\",\r\n\t\"channel\":\"main-channel\",\r\n\t\"chaincode\":\"test_node\",\r\n\t\"function\":\"ping\",\r\n\t\"args\":[]\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url_client}}/smartcontract/query",
+											"host": [
+												"{{url_client}}"
+											],
+											"path": [
+												"smartcontract",
+												"query"
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								},
+								{
+									"name": "Node: all costumers",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"org\":\"MainOrg\",\r\n\t\"channel\":\"main-channel\",\r\n\t\"chaincode\":\"test_node\",\r\n\t\"function\":\"queryAllCustomers\",\r\n\t\"args\":[]\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url_client}}/smartcontract/query",
+											"host": [
+												"{{url_client}}"
+											],
+											"path": [
+												"smartcontract",
+												"query"
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								},
+								{
+									"name": "Node: all licensers",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"org\":\"MainOrg\",\r\n\t\"channel\":\"main-channel\",\r\n\t\"chaincode\":\"smart_licenses\",\r\n\t\"function\":\"queryAllLicensers\",\r\n\t\"args\":[]\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url_client}}/smartcontract/invoke",
+											"host": [
+												"{{url_client}}"
+											],
+											"path": [
+												"smartcontract",
+												"invoke"
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								}
+							]
+						},
+						{
+							"name": "Install",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"orgs\": [\"MainOrg\"],\r\n\t\"channel\": \"main-channel\",\r\n\t\"chaincode\": \"smart_licenses\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_client}}/smartcontract/install",
+									"host": [
+										"{{url_client}}"
+									],
+									"path": [
+										"smartcontract",
+										"install"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "test_node",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"orgs\": [\"MainOrg\"],\r\n\t\"channel\": \"main-channel\",\r\n\t\"chaincode\": \"test_node\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url_client}}/smartcontract/install",
+											"host": [
+												"{{url_client}}"
+											],
+											"path": [
+												"smartcontract",
+												"install"
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								},
+								{
+									"name": "smart_licenses",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"orgs\": [\"MainOrg\"],\r\n\t\"channel\": \"main-channel\",\r\n\t\"chaincode\": \"smart_licenses\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url_client}}/smartcontract/install",
+											"host": [
+												"{{url_client}}"
+											],
+											"path": [
+												"smartcontract",
+												"install"
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "channels",
+					"item": [
+						{
+							"name": "Join",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"org\":\"MainOrg\",\r\n\t\"channel\":\"main-channel\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_client}}/channels/join",
+									"host": [
+										"{{url_client}}"
+									],
+									"path": [
+										"channels",
+										"join"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "class-01",
+			"item": [
+				{
+					"name": "tarea1",
+					"item": [
+						{
+							"name": "mine block",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/mine_block",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"mine_block"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get chain",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/get_chain",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"get_chain"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "is valid",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/is_valid",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"is_valid"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add bad block",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/add_bad_block",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"add_bad_block"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "tarea2",
+					"item": [
+						{
+							"name": "node_1",
+							"item": [
+								{
+									"name": "connect_node",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"nodes\": [\r\n        \"http://localhost:5002\",\r\n        \"http://localhost:5003\",\r\n        \"http://localhost:5004\"\r\n    ]\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url_node_1}}/connect_node",
+											"host": [
+												"{{url_node_1}}"
+											],
+											"path": [
+												"connect_node"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "add_transaction",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"sender\": \"Mary\",\r\n    \"receiver\": \"Ema\",\r\n    \"amount\": 25\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url_node_1}}/add_transaction",
+											"host": [
+												"{{url_node_1}}"
+											],
+											"path": [
+												"add_transaction"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "get_chain",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url_node_1}}/get_chain",
+											"host": [
+												"{{url_node_1}}"
+											],
+											"path": [
+												"get_chain"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "mine_block",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url_node_1}}/mine_block",
+											"host": [
+												"{{url_node_1}}"
+											],
+											"path": [
+												"mine_block"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "replace_chain",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url_node_1}}/replace_chain",
+											"host": [
+												"{{url_node_1}}"
+											],
+											"path": [
+												"replace_chain"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "node_2",
+							"item": [
+								{
+									"name": "connect_node",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"nodes\": [\r\n        \"http://localhost:5001\",\r\n        \"http://localhost:5003\",\r\n        \"http://localhost:5004\"\r\n    ]\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url_node_2}}/connect_node",
+											"host": [
+												"{{url_node_2}}"
+											],
+											"path": [
+												"connect_node"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "get_chain",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url_node_2}}/get_chain",
+											"host": [
+												"{{url_node_2}}"
+											],
+											"path": [
+												"get_chain"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "replace_chain",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url_node_2}}/replace_chain",
+											"host": [
+												"{{url_node_2}}"
+											],
+											"path": [
+												"replace_chain"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "node_3",
+							"item": [
+								{
+									"name": "connect_node",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"nodes\": [\r\n        \"http://localhost:5002\",\r\n        \"http://localhost:5001\",\r\n        \"http://localhost:5004\"\r\n    ]\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url_node_3}}/connect_node",
+											"host": [
+												"{{url_node_3}}"
+											],
+											"path": [
+												"connect_node"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "get_chain",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url_node_3}}/get_chain",
+											"host": [
+												"{{url_node_3}}"
+											],
+											"path": [
+												"get_chain"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "replace_chain",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url_node_3}}/replace_chain",
+											"host": [
+												"{{url_node_3}}"
+											],
+											"path": [
+												"replace_chain"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "node_4",
+							"item": [
+								{
+									"name": "connect_node",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"nodes\": [\r\n        \"http://localhost:5002\",\r\n        \"http://localhost:5001\",\r\n        \"http://localhost:5003\"\r\n    ]\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url_node_4}}/connect_node",
+											"host": [
+												"{{url_node_4}}"
+											],
+											"path": [
+												"connect_node"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "add_transaction",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"sender\": \"Paul\",\r\n    \"receiver\": \"Mary\",\r\n    \"amount\": 50\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url_node_4}}/add_transaction",
+											"host": [
+												"{{url_node_4}}"
+											],
+											"path": [
+												"add_transaction"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "transaction 1",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"sender\": \"Peter\",\r\n    \"receiver\": \"Paul\",\r\n    \"amount\": 100\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url_node_4}}/add_transaction",
+													"host": [
+														"{{url_node_4}}"
+													],
+													"path": [
+														"add_transaction"
+													]
+												}
+											},
+											"_postman_previewlanguage": null,
+											"header": null,
+											"cookie": [],
+											"body": null
+										},
+										{
+											"name": "transaction 2",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"sender\": \"Paul\",\r\n    \"receiver\": \"Mary\",\r\n    \"amount\": 50\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url_node_4}}/add_transaction",
+													"host": [
+														"{{url_node_4}}"
+													],
+													"path": [
+														"add_transaction"
+													]
+												}
+											},
+											"_postman_previewlanguage": null,
+											"header": null,
+											"cookie": [],
+											"body": null
+										}
+									]
+								},
+								{
+									"name": "get_chain",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url_node_4}}/get_chain",
+											"host": [
+												"{{url_node_4}}"
+											],
+											"path": [
+												"get_chain"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "mine_block",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url_node_4}}/mine_block",
+											"host": [
+												"{{url_node_4}}"
+											],
+											"path": [
+												"mine_block"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "replace_chain",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url_node_4}}/replace_chain",
+											"host": [
+												"{{url_node_4}}"
+											],
+											"path": [
+												"replace_chain"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:5000"
+		},
+		{
+			"key": "url_node_1",
+			"value": "http://localhost:5001"
+		},
+		{
+			"key": "url_node_2",
+			"value": "http://localhost:5002"
+		},
+		{
+			"key": "url_node_3",
+			"value": "http://localhost:5003"
+		},
+		{
+			"key": "url_node_4",
+			"value": "http://localhost:5004"
+		},
+		{
+			"key": "url_client",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}

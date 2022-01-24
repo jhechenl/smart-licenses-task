@@ -1,0 +1,13 @@
+{
+	"name": "smart_licenses",
+	"version": "1.0.0",
+	"description": "smart_licenses chaincode implemented in node.js",
+	"scripts": {
+		"start": "node smart_licenses.js"
+	},
+	"engine-strict": true,
+	"license": "Apache-2.0",
+	"dependencies": {
+		"fabric-shim": "^2.2.1"
+	}
+}
